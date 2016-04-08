@@ -38,7 +38,7 @@ function generateSalt($length = 4, $has_letter = false)
 }
 
 /**
- * 生成订单号
+ * 生成订单号(字母+数字)
  */
 function build_order_sn()
 {
@@ -47,4 +47,11 @@ function build_order_sn()
     $orderSn = $yCode[intval(date('Y')) - 2015] . strtoupper(dechex(date('m'))) . date('d') . substr(time(), -5) . substr(microtime(), 2, 5) . sprintf('%02d', rand(0, 99));
 
     return $orderSn;
+}
+
+/**
+ * 得到新订单号(纯数字)
+ */
+function get_order_sn() {
+    return mb_substr(date('YmdHis') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT), 2, 18);
 }
