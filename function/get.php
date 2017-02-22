@@ -16,3 +16,8 @@ function getClientIp()
     }
     return preg_match ( '/[\d\.]{7,15}/', $ip, $matches ) ? $matches [0] : '';
 }
+
+function test()
+{
+    
+}
