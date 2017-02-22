@@ -19,5 +19,5 @@ function getClientIp()
 
 function test()
 {
-    
+    echo 1;
 }
